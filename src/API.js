@@ -7,6 +7,11 @@ const REWARDS_URL = 'https://api.devexhacks.com/rewards/account/';
 export const getCapOne = () => {
     return axios.get(API_URL)
   }
+
+export const getRewards = (data) => {
+  console.log(data);
+  return axios.get(`${API_URL}${data}`)
+}
 // export const addCapOne = (data) => {
 //   return axios.post(POST_URL, data)
 // }
