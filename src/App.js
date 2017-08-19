@@ -22,7 +22,7 @@ class App extends Component {
   }
   componentDidMount(){
     getCapOne().then(result => {
-      this.setState({ rewards: result})
+      this.setState({ rewards: result.data.rewardsAccounts})
       console.log(this.state.rewards);
     })
   }
@@ -56,7 +56,9 @@ class App extends Component {
           <Home />
         }
         {this.state.activeItem === 'Rewards' &&
-          <Rewards />
+          <Rewards
+            rewards={this.state.rewards}
+          />
         }
       </div>
     )

@@ -5,10 +5,10 @@ class Rewards extends Component {
     super()
   }
   render() {
+    console.log(this.props);
     return (
       <div>
-      {console.log('In the Rewards')}
-      <p>rewards</p>
+  
       </div>
     )
   }
