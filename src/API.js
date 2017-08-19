@@ -10,5 +10,10 @@ export const addCapOne = (data) => {
   return axios.post(POST_URL, data)
 }
 export const getRewards = (user) => {
-  return axios.get(REWARDS_URL, user)
+  var rewards_path = REWARDS_URL+user
+  return axios.get(rewards_path)
+}
+export const getAcctDetail = (acct_id) => {
+  var acct_path = REWARDS_URL+acct_id;
+  return axios.get(acct_path)
 }
