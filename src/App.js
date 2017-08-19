@@ -4,14 +4,27 @@ import './App.css';
 import { BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 import Rewards from './components/Rewards';
 import Home from './components/Home';
+import { getCapOne } from './API';
 
 import { Input, Menu, Segment } from 'semantic-ui-react'
 
 class App extends Component {
-  state = { activeItem: 'Home' }
+  constructor(){
+    super()
+    this.state={
+      activeItem: 'Home',
+      rewards: []
+    }
+  }
 
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name })
+  }
+  componentDidMount(){
+    getCapOne().then(result => {
+      this.setState({ rewards: result})
+      console.log(this.state.rewards);
+    })
   }
 
   render() {
